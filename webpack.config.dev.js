@@ -11,7 +11,7 @@ module.exports = {
     // listen to code updates emitted by hot middleware:
     'webpack-hot-middleware/client',
     // your code:
-    './src/index'
+    './client/index'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -27,12 +27,12 @@ module.exports = {
       {
         test: /\.js$/,
         loaders: ['babel'],
-        include: path.join(__dirname, 'src')
+        include: path.join(__dirname, 'client')
       },
       {
         test: /\.scss$/,
         loaders: ['style','css','autoprefixer','sass'],
-        include: path.join(__dirname, 'src')
+        include: path.join(__dirname, 'client')
       },
       {
         test: /\.css$/,
@@ -48,10 +48,6 @@ module.exports = {
       }
     ]
   },
-  // resolve: {
-  //   modulesDirectories: ['node_modules', path.join(__dirname, './node_modules')],
-  //   extensions: ['', '.web.js', '.js', '.json'],
-  // },
 };
 
 
