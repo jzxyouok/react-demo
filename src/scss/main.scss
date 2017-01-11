@@ -1,0 +1,107 @@
+html{
+  body{
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    
+    .app-wrap{
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .app-header{
+      .subnav-head{
+        height: 180px;
+        background:url(../images/user_bg.jpg) top center no-repeat;
+        background-size:100%;
+        color: #fff;
+        padding-top: 20px;
+        box-sizing: border-box;
+        opacity: 0.9;
+        text-shadow: 1px 1px 1px rgba(20,20,20,1);
+        border-bottom: 1px solid rgb(224, 224, 224);
+        animation: slideTop 30s infinite ease-in-out;
+   
+        .desc{
+          font-size: 14px;
+          text-shadow: 1px 1px 1px #555;
+          line-height: 1.5;
+          margin: 15px;
+          box-sizing: border-box;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          margin-top: 30px;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          apple-line-clamp: 2;
+        }
+      }
+      .NavigationMenu{
+        color: #fff !important;
+        padding: 12px;
+      }
+      .EditIcon{
+        color: #fff !important;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+      }
+    }
+
+    .app-container{
+      flex-grow: 1;
+      -webkit-overflow-scrolling: touch;
+      overflow: {
+        x: hidden;
+        y: auto;
+      }
+
+      &::-webkit-scrollbar{
+        display:none;
+      }
+
+      .animation-rotate{
+        transition: all;
+        animation: rotate 4s infinite linear;
+      }
+
+      .animation-gradually{
+        transition: all;
+        animation: gradually 0.35s  linear;
+      }
+    }
+
+    .app-footer{
+      position: relative;
+    }
+  }
+
+  @keyframes rotate{
+    from{
+      transform: rotate(720deg);
+    }
+    to{
+      transform: rotate(0);
+    }
+  }
+  @keyframes gradually{
+    from{
+      opacity: 1;
+    }
+    to{
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  @keyframes slideTop{
+    from{
+      background-position-y: 0;
+    }
+    50%{
+      background-position-y: 100%;
+    }
+  }
+}
